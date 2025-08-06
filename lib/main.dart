@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'services/auth_state.dart';
 import 'screens/login_screen.dart';
 import 'widgets/user_profile_widget.dart';
+import 'screens/demo_auth_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -96,6 +97,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   icon: Icon(Icons.person),
                   label: Text('Profile'),
                 ),
+                NavigationRailDestination(
+                  icon: Icon(Icons.bug_report),
+                  label: Text('Demo'),
+                ),
               ],
               selectedIndex: _selectedIndex,
               onDestinationSelected: (value) {
@@ -124,6 +129,8 @@ class _MyHomePageState extends State<MyHomePage> {
         return FavoritesPage();
       case 2:
         return ProfilePage();
+      case 3:
+        return DemoAuthPage();
       default:
         return GeneratorPage();
     }
